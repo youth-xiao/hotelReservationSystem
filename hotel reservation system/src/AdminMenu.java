@@ -108,6 +108,7 @@ public class AdminMenu {
                 }
                 RoomType roomType = RoomType.valueOf(enumeration);
                 Room newRoom = new Room(roomNumber, roomPrice, roomType, roomPrice == 0);
+                newRooms.add(newRoom);
             }
             else if (response.equalsIgnoreCase("no")){
                 keepAdding = false;

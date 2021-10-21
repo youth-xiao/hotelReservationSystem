@@ -217,7 +217,7 @@ public class MainMenu {
     // ------------------ 2. See my reservations ------------------
     public static Collection<Reservation> seeMyReservations(Scanner scanner) {
         System.out.println("Please enter your email (hello@world.com)");
-        String email = scanner.nextLine();
+        String email = scanner.next();
         Customer customer = customerService.getCustomer(email);
         if (customer == null) {
             System.out.println("Sorry, there is not such an account associated with your email.");
@@ -238,11 +238,11 @@ public class MainMenu {
     // -------------------- 3. Create an account --------------------
     public static Customer createAccount(Scanner scanner) {
         System.out.println("Please enter your email. (hello@world.domain)");
-        String newEmail = scanner.nextLine();
+        String newEmail = scanner.next();
         System.out.println("Please enter your first name.");
-        String firstName = scanner.nextLine();
+        String firstName = scanner.next();
         System.out.println("Please enter your last name.");
-        String lastName = scanner.nextLine();
+        String lastName = scanner.next();
         customerService.addCustomer(newEmail, firstName, lastName);
         return customerService.getCustomer(newEmail);
     }
